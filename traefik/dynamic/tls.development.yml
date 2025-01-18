@@ -7,8 +7,3 @@ tls:
       defaultCertificate:
         certFile: /etc/letsencrypt/live/nambapp.ru/fullchain.pem
         keyFile: /etc/letsencrypt/live/nambapp.ru/privkey.pem
-      certificates:
-        - certFile: /etc/letsencrypt/live/nambapp.ru/fullchain.pem
-          keyFile: /etc/letsencrypt/live/nambapp.ru/privkey.pem
-          caFiles:
-            - /etc/letsencrypt/live/nambapp.ru/chain.pem
