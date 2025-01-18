@@ -10,10 +10,3 @@ providers:
   file:
     directory: "/etc/traefik/dynamic"
     watch: true
-
-#certificatesResolvers:
-#  letsencrypt:
-#    acme:
-#      email: gertyn07@gmail.com
-#      storage: /acme.json
-#      tlsChallenge: {}
