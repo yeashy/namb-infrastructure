@@ -1,0 +1,27 @@
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - conversion_app
+    command:
+      - "--configFile=/etc/traefik/traefik.yml"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - ./traefik.${APP_ENV}.yml:/etc/traefik/traefik.yml:ro
+      - ./dynamic/http.${APP_ENV}.yml:/etc/traefik/dynamic/http.yml:ro
+      - ./dynamic/tls.${APP_ENV}.yml:/etc/traefik/dynamic/tls.yml:ro
+      - ./acme.json:/acme.json
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+
+networks:
+  conversion_app:
+    name: conversion_app
+    external: true
