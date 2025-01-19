@@ -14,6 +14,7 @@ services:
       - ./dynamic/tls.${APP_ENV}.yml:/etc/traefik/dynamic/tls.yml:ro
       - ./acme.json:/acme.json
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./entrypoint.sh:/entrypoint.sh:ro
 
 
 networks:
