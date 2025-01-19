@@ -4,6 +4,13 @@ entryPoints:
   https:
     address: ":443"
 
+api:
+  insecure: true
+  dashboard: true
+
+log:
+  level: DEBUG
+
 providers:
   docker:
     exposedByDefault: false
