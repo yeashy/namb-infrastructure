@@ -26,16 +26,19 @@ env:
 
 up:
 	@echo "Starting the $(ENV) environment"
+	@chmod +x entrypoint.sh;
 	docker compose -f docker-compose.yml -f docker-compose.@$(ENV).yml up -d
 	@echo "$(ENV) environment has been started successfully."
 
 build:
 	@echo "Recreating and rebuilding the $(ENV) environment"
+	@chmod +x entrypoint.sh;
 	docker compose -f docker-compose.yml -f docker-compose.@$(ENV).yml up -d --build --force-recreate --remove-orphans
 	@echo "$(ENV) environment has been started successfully."
 
 deploy:
 	@echo "Recreating the $(ENV) environment"
+	@chmod +x entrypoint.sh;
 	docker compose -f docker-compose.yml -f docker-compose.@$(ENV).yml up -d --force-recreate
 	@echo "$(ENV) environment has been started successfully."
 

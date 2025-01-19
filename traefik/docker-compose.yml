@@ -7,12 +7,7 @@ services:
       - .env
     networks:
       - conversion_app
-    command:
-      - /bin/sh
-      - -c
-      - |
-        chmod 600 /acme.json && \
-        traefik --configFile=/etc/traefik/traefik.yml
+    entrypoint: /entrypoint.sh
     volumes:
       - ./traefik.${APP_ENV}.yml:/etc/traefik/traefik.yml:ro
       - ./dynamic/http.${APP_ENV}.yml:/etc/traefik/dynamic/http.yml:ro
