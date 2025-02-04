@@ -16,4 +16,7 @@ certificatesResolvers:
     acme:
       email: gertyn07@gmail.com
       storage: /acme.json
-      tlsChallenge: {}
+      dnsChallenge:
+        provider: "cloudflare"
+        resolvers:
+          - "8.8.8.8:53"
