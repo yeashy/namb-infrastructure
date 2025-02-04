@@ -2,8 +2,3 @@ tls:
   options:
     default:
       minVersion: VersionTLS12
-  domains:
-    - main: "nambapp.ru"
-    - sans: "*.nambapp.ru"
-    - sans: "dev.nambapp.ru"
-    - sans: "*.dev.nambapp.ru"
