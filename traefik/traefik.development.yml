@@ -12,7 +12,6 @@ providers:
     watch: true
 
 api:
-  insecure: true
   dashboard: true
 
 certificatesResolvers:

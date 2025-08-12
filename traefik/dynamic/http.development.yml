@@ -3,3 +3,11 @@ http:
     redirect-to-https:
       redirectScheme:
         scheme: https
+  routers:
+    dashboard:
+      rule: "Host(`dev.nambapp.ru`)"  # тут твой домен
+      entryPoints:
+        - https
+      service: api@internal
+      tls:
+        certResolver: letsencrypt
