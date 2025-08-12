@@ -11,6 +11,10 @@ providers:
     directory: "/etc/traefik/dynamic"
     watch: true
 
+api:
+  insecure: true
+  dashboard: true
+
 certificatesResolvers:
   letsencrypt:
     acme:
