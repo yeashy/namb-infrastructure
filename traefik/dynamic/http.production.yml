@@ -12,7 +12,7 @@ http:
 
   routers:
     dashboard:
-      rule: "Host(`${DASHBOARD_SUBDOMAIN?}.${BASE_DOMAIN?}`)"
+      rule: "Host(`dashboard.nambapp.ru`)"
       entryPoints:
         - https
       middlewares:
